@@ -10,7 +10,7 @@
           <time datetime="{{ article.pubDate }}">
             {{ Date(article.pubDate).toLocaleString('es-ES') }}
           </time>
-          <div v-html="article.description" />
+          <div v-dompurify-html="article.description" />
         </article>
       </li>
     </ul>

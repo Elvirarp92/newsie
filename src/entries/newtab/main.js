@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import { createMemoryHistory, createRouter } from 'vue-router'
 import { createPinia } from "pinia";
+import VueDOMPurifyHTML from 'vue-dompurify-html';
 
 /* Components */
 import Articles from "./views/Articles.vue"
@@ -22,6 +23,7 @@ const router = createRouter({
 const pinia = createPinia()
 
 createApp(App)
+.use(VueDOMPurifyHTML)
 .use(router)
 .use(pinia)
 .mount("#app");
