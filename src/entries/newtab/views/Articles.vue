@@ -36,9 +36,7 @@ onMounted(async () => {
       type: "fetchRss",
       url: feed.url
     }).then(res => {
-      console.log(res)
       if (res.ok) {
-        console.log(res.items)
         articles.push(...res.items.slice(0, 20))
       }
     })
