@@ -20,7 +20,12 @@ const manifest = {
 
   "chrome_settings_overrides": {
     "homepage": "src/entries/newtab/index.html"
-  }
+  },
+
+  "background": {
+    "scripts": ["src/workers/feed-fetcher.js"],
+    
+  },
 };
 
 export function getManifest() {
@@ -29,7 +34,9 @@ export function getManifest() {
     description: pkg.description,
     name: pkg.displayName ?? pkg.name,
     version: pkg.version,
-    manifest_version: 2,
+    manifest_version: 3,
+    permissions: ["storage"],
+    host_permissions: [ "*://*/*"],
     ...manifest,
   };
 }
