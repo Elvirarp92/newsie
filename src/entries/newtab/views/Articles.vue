@@ -4,10 +4,10 @@
     <ul>
       <li v-for="article in sortedArticles">
         <article>
-          <a href="{{ article.link }}">
+          <a :href="article.link">
             <h3>{{article.title}}</h3>
           </a>
-          <time datetime="{{ article.pubDate }}">
+          <time :datetime="article.pubDate">
             {{ Date(article.pubDate).toLocaleString('es-ES') }}
           </time>
           <div v-dompurify-html="article.description" />
