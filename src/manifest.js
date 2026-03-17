@@ -36,7 +36,7 @@ export function getManifest() {
     version: pkg.version,
     manifest_version: 3,
     permissions: ["storage"],
-    host_permissions: [ "*://*/*"],
+    host_permissions: [],
     ...manifest,
   };
 }
