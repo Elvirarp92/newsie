@@ -7,8 +7,8 @@
       </nav>
     </aside>
     <main>
-      <h1>newsie</h1>
-      <p>RSS feeds, in yer face.</p>
+      <h1>Newsie</h1>
+      <p>All your news in every new tab</p>
       <RouterView />
     </main>
   </div>
