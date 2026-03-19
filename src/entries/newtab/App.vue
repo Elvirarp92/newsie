@@ -27,3 +27,31 @@ onMounted(() => {
 })
 </script>
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&family=Shrikhand&display=swap');
+
+:root {
+  --white: hsl(192, 50%, 96%);
+  --orange: hsl(32, 100%, 50%);
+  --blue-light: hsl(193, 48%, 54%);
+  --blue-dark: hsl(201, 47%, 24%);
+  --blue-darker: hsl(200, 48%, 18%);
+  --black: hsl(199, 51%, 12%)
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-family: "Shrikhand", serif;
+  color: var(--blue-light);
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
