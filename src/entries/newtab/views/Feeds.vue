@@ -36,6 +36,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useIndexedDatabaseStore } from '../stores/indexedDatabaseStore.js'
+import { permissions } from 'webextension-polyfill'
 
 // Stores
 const indexedDatabaseStore = useIndexedDatabaseStore()
@@ -45,19 +46,26 @@ const title = ref('')
 const url = ref('')
 
 // Functions
-function createFeed (){
+async function createFeed (){
   // We already have them as 'required' in the form but just in case
   if (!title.value || !url.value) return
+  const permissionsToRequest = {
+    origins: [url.value]
+  }
 
-  indexedDatabaseStore.createFeed(
-    {
-      title: title.value,
-      url: url.value
-    }
-  )
+  const req = await permissions.request(permissionsToRequest)
 
-  title.value = ''
-  url.value = ''
+  if (req) {
+    indexedDatabaseStore.createFeed(
+      {
+        title: title.value,
+        url: url.value
+      }
+    )
+    
+    title.value = ''
+    url.value = ''
+  }
 }
 
 </script>
