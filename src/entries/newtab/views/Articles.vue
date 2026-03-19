@@ -7,6 +7,7 @@
           <a :href="article.link">
             <h3>{{article.title}}</h3>
           </a>
+          <address>{{ article.source }} -- {{ article.author }}</address>
           <time :datetime="article.pubDate">
             {{ Date(article.pubDate).toLocaleString('es-ES') }}
           </time>
@@ -25,7 +26,7 @@ const indexedDatabaseStore = useIndexedDatabaseStore()
 
 const articles = reactive([])
 const sortedArticles = computed(() => articles.sort((a, b) => {
-    return new Date(b.pubDate) - new Date(a.pubDate);
+    return new Date(b.pubDate) - new Date(a.pubDate)
   }))
 
 onMounted(async () => {

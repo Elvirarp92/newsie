@@ -12,11 +12,13 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     .then((text) => {
       const parser = new DOMParser();
       const doc = parser.parseFromString(text, "application/xml");
-      const items = [...doc.querySelectorAll("item")].map((item) => ({
+        const items = [...doc.querySelectorAll("item")].map((item) => ({
         title: item.querySelector("title")?.textContent,
         link: item.querySelector("link")?.textContent,
         pubDate: item.querySelector("pubDate")?.textContent,
         description: item.querySelector("description")?.textContent,
+        source: item.querySelector("source")?.textContent,
+        author: item.querySelector("author")?.textContent
       }));
 
       sendResponse({ ok: true, items });
