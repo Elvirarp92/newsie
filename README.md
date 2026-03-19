@@ -1,27 +1,6 @@
 # newsie
-
-This template should help get you started developing a vue web extension in Vite.
-
-## Usage Notes
-
-The extension manifest is defined in `src/manifest.js` and used by `@samrum/vite-plugin-web-extension` in the vite config.
-
-Background, content scripts, options, and popup entry points exist in the `src/entries` directory. 
-
-Content scripts are rendered by `src/entries/contentScript/renderContent.js` which renders content within a ShadowRoot
-and handles style injection for HMR and build modes.
-
-Otherwise, the project functions just like a regular Vite project.
-
-
-
-
-
-Refer to [@samrum/vite-plugin-web-extension](https://github.com/samrum/vite-plugin-web-extension) for more usage notes.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+*All your news in every new tab.*
+![Newsie logo](public/imgs/newsie-imagotype.png "Newsie logo")
 
 ## Project Setup
 
@@ -38,6 +17,9 @@ Currently only works in Chromium based browsers.
 ```sh
 npm run dev
 ```
+
+Refer to [@samrum/vite-plugin-web-extension](https://github.com/samrum/vite-plugin-web-extension) for more usage notes.
+
 
 #### Development, Watch
 

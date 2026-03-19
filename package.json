@@ -1,7 +1,7 @@
 {
   "name": "newsie",
   "version": "1.0.0",
-  "displayName": "Feed yer Face",
+  "displayName": "Newsie",
   "author": "Ira Ramírez <elvirarp92@gmail.com>",
   "description": "A feed reader, in yer face. It shows you a list of your feeds every time you open a new tab.",
   "type": "module",
