@@ -8,7 +8,7 @@
     </aside>
     <main>
       <h1>Newsie</h1>
-      <p>All your news in every new tab</p>
+      <p>All your news in every new tab.</p>
       <RouterView />
     </main>
   </div>
