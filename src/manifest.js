@@ -37,6 +37,7 @@ export function getManifest() {
     manifest_version: 3,
     permissions: ["storage"],
     host_permissions: [],
+    optional_permissions: ["*://*/*"],
     ...manifest,
   };
 }
