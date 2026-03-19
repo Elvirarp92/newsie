@@ -7,7 +7,7 @@
       </nav>
     </aside>
     <main>
-      <h1>Feedyerface</h1>
+      <h1>newsie</h1>
       <p>RSS feeds, in yer face.</p>
       <RouterView />
     </main>

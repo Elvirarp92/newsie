@@ -1,4 +1,4 @@
-const DB_NAME = 'feedyerface'
+const DB_NAME = 'newsie'
 const DB_VERSION = 1
 let DB
 

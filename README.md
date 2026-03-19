@@ -1,4 +1,4 @@
-# feedyerface
+# newsie
 
 This template should help get you started developing a vue web extension in Vite.
 
