@@ -1,12 +1,12 @@
 <template>
     <main>
-      <header>
+      <header class="app-header">
         <h1>Newsie</h1>
         <p>All your news in every new tab.</p>
       </header>
-      <nav>
-        <RouterLink to="/">Artículos</RouterLink>
-        <RouterLink to="/feeds">Suscripciones</RouterLink>
+      <nav class="app-navbar">
+        <RouterLink to="/" active-class="app-navbar__link--active">Artículos</RouterLink>
+        <RouterLink to="/feeds" active-class="app-navbar__link--active">Suscripciones</RouterLink>
       </nav>
       <RouterView />
     </main>
@@ -64,18 +64,6 @@ main {
   justify-items: center;
 }
 
-header {
-  text-align: center;
-}
-
-h1 {
-  font-family: "Shrikhand", serif;
-  color: var(--blue-light);
-  font-weight: 400;
-  font-size: 3rem;
-  font-style: normal;
-}
-
 a {
     color: var(--foreground);
     transition: color 200ms ease-in;
@@ -87,6 +75,33 @@ a:visited {
 
 a:hover {
     color: var(--accent)
+}
+
+.app-header {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  gap: 0.5rem;
+} 
+
+.app-header > h1 {
+  font-family: "Shrikhand", serif;
+  color: var(--blue-light);
+  font-weight: 400;
+  font-size: 3rem;
+  font-style: normal;
+}
+
+.app-navbar {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  text-decoration: none;
+}
+
+.app-navbar__link--active {
+  color: var(--accent);
+  text-decoration: underline;
 }
 </style>
 
