@@ -1,24 +1,23 @@
 <template>
   <section>
-    <h2>Artículos</h2>
+    <h2 class="sr-only">Artículos</h2>
     <ul>
       <li v-for="article in sortedArticles">
-        <article>
-          <a :href="article.link">
-            <h3>{{article.title}}</h3>
-          </a>
-          <address>{{ article.source }} -- {{ article.author }}</address>
-          <time :datetime="article.pubDate">
-            {{ Date(article.pubDate).toLocaleString('es-ES') }}
-          </time>
-          <div v-dompurify-html="article.description" />
-        </article>
+        <Article 
+          :link="article.link"
+          :title="article.title"
+          :source="article.source"
+          :author="article.author"
+          :pubdate="article.pubDate"
+          :description="article.description"
+        />
       </li>
     </ul>
   </section>
 </template>
 
 <script setup>
+import Article from '~/components/Article.vue'
 import { onBeforeUnmount, onMounted, reactive, computed } from 'vue'
 import { useIndexedDatabaseStore } from '../stores/indexedDatabaseStore.js'
 import browser from "webextension-polyfill"
@@ -49,3 +48,12 @@ onBeforeUnmount(() => {
 })
 
 </script>
+
+<style scoped>
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem
+}
+</style>
