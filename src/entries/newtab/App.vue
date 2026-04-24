@@ -5,8 +5,8 @@
         <p>All your news in every new tab.</p>
       </header>
       <nav class="app-navbar">
-        <RouterLink to="/" active-class="app-navbar__link--active">Artículos</RouterLink>
-        <RouterLink to="/feeds" active-class="app-navbar__link--active">Suscripciones</RouterLink>
+        <RouterLink to="/" active-class="app-navbar__link--active">Articles</RouterLink>
+        <RouterLink to="/feeds" active-class="app-navbar__link--active">Subscriptions</RouterLink>
       </nav>
       <RouterView />
     </main>
@@ -28,7 +28,7 @@ onMounted(() => {
 <style>
 @import url('~/styles/reset.css');
 @import url('~/styles/sr-only.css');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&family=Shrikhand&display=swap');
 
 :root {
   --white: hsl(192, 50%, 96%);
@@ -77,6 +77,12 @@ a:hover {
     color: var(--accent)
 }
 
+h3 {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 18px;
+}
+
 .app-header {
   text-align: center;
   display: grid;
@@ -102,6 +108,28 @@ a:hover {
 .app-navbar__link--active {
   color: var(--accent);
   text-decoration: underline;
+}
+
+.o-feeds {
+  display: grid;
+  gap: 2rem;
+  max-width: 50rem;
+}
+
+.o-feeds__add-feed,
+.o-feeds__subscriptions,
+.o-feeds__subscriptions > div,
+.o-feeds__add-feed > div {
+  display: grid;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 770px) {
+  .o-feeds__add-feed > div {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+  }
 }
 </style>
 

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2 class="sr-only">Artículos</h2>
+    <h2 class="sr-only">Articles</h2>
     <ul>
       <li v-for="article in sortedArticles">
         <Article 
@@ -51,9 +51,17 @@ onBeforeUnmount(() => {
 
 <style scoped>
 ul {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+}
+
+@media screen and (min-width: 770px) {
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem
+  }
 }
 </style>

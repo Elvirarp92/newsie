@@ -1,32 +1,34 @@
 <template>
-  <section>
-    <h2>Tus suscripciones</h2>
-    <form id="add-feed" action="index.html" @submit.prevent="createFeed">
-      <h3>Introduce un nuevo feed a tu lista</h3>
-      <label for="title">Título</label>
-      <input 
+  <section class="o-feeds">
+    <h2 class="sr-only">Your subscriptions</h2>
+    <form class="o-feeds__add-feed" id="add-feed" action="index.html" @submit.prevent="createFeed">
+      <h3>Add a new feed</h3>
+      <div>
+        <TextInput 
         required
         v-model="title"
         type="text"
         name="title"
         id="title"
-      />
-      <label for="url">URL</label>
-      <input
+        label="Title"
+        />
+        <TextInput
         required
         v-model="url"
         type="url"
         name="url"
         id="url"
-      />
-      <button type="submit">Añadir</button>
+        label="URL"
+        />
+        <Button type="submit">Subscribe</Button>
+      </div>
     </form>
-    <section>
-      <h3>Tus suscripciones</h3>
+    <section class="o-feeds__subscriptions">
+      <h3>Your subscriptions</h3>
       <ul>
         <li v-for="feed in indexedDatabaseStore.$state.feeds" :key="feed.url">
           {{ feed.title }} ({{ feed.url }})
-          <button @click="indexedDatabaseStore.deleteFeed(feed)">Desuscribirse</button>
+          <Button @click="indexedDatabaseStore.deleteFeed(feed)">Unsubscribe</Button>
         </li>
       </ul>
     </section>
@@ -37,6 +39,8 @@
 import { ref } from 'vue'
 import { useIndexedDatabaseStore } from '../stores/indexedDatabaseStore.js'
 import { permissions } from 'webextension-polyfill'
+import TextInput from '~/components/TextInput.vue'
+import Button from '~/components/Button.vue'
 
 // Stores
 const indexedDatabaseStore = useIndexedDatabaseStore()
